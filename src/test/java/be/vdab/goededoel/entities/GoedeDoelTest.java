@@ -6,6 +6,8 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.math.BigDecimal;
+
 
 public class GoedeDoelTest {
 	private static final String NAAM = "CliniClowns";
@@ -34,5 +36,10 @@ public class GoedeDoelTest {
 	@Test
 	public void doelenMetVerschillendeNaamZijnVerschillend(){
 		assertThat(doel).isNotEqualTo(new GoedeDoel("WWF"));
+	}
+
+	@Test
+	public void doelVerschiltVanEenObjectMetEenAnderType(){
+		assertThat(doel).isNotEqualTo(BigDecimal.ZERO);
 	}
 }
